@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Festas3D — kits de festa infantil personalizados em impressão 3D.">
+<title>Festas3D | Festa personalizada em 3D</title>
+<style>
+:root{--g:#087a45;--g2:#0b9a57;--d:#382319;--c:#fff7ed;--line:#eadfd4;--muted:#6c625c}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--d);background:#fff}
+.top{background:var(--g);color:#fff;text-align:center;padding:9px;font-size:13px}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}.nav{max-width:1180px;margin:auto;padding:14px 18px;display:flex;gap:18px;align-items:center}
+.logo{font-size:27px;font-weight:900;white-space:nowrap}.logo span{color:var(--g)}.search{flex:1;border:1px solid #ddd;border-radius:28px;padding:13px 17px;font-size:15px}.nav a{color:var(--d);text-decoration:none;font-weight:700}.cartbtn{border:0;background:var(--c);padding:12px 16px;border-radius:24px;font-weight:800;cursor:pointer}
+.hero{background:linear-gradient(115deg,#f8ead9,#e4f4e8);padding:56px 18px}.heroIn{max-width:1180px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.eyebrow{letter-spacing:2px;font-size:12px;font-weight:800;color:var(--g)}h1{font-size:50px;line-height:1.02;margin:12px 0}h1 span{color:var(--g)}.hero p{font-size:18px;line-height:1.55;color:#594d46}.btn{background:var(--g);color:#fff;border:0;border-radius:28px;padding:14px 22px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block}.heroImg{min-height:330px;border-radius:28px;background:radial-gradient(circle at 45% 37%,#59bd61 0 14%,transparent 15%),linear-gradient(145deg,#d7f0dc,#f6d3aa);display:flex;align-items:center;justify-content:center;font-size:100px;box-shadow:0 18px 40px #0001}
+.section{max-width:1180px;margin:auto;padding:48px 18px}.section h2{font-size:30px;margin:0 0 8px}.sub{color:var(--muted);margin-bottom:24px}.themes{display:flex;gap:12px;overflow:auto}.theme{min-width:118px;background:#faf7f3;border:1px solid var(--line);border-radius:17px;padding:15px;text-align:center;font-weight:800;cursor:pointer}.theme b{font-size:40px;display:block;margin-bottom:7px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}.pic{height:180px;background:linear-gradient(135deg,#e0f2e4,#f9dfc0);display:flex;align-items:center;justify-content:center;font-size:70px}.body{padding:15px}.body h3{margin:0 0 7px;font-size:17px}.price{font-size:22px;color:var(--g);font-weight:900;margin:10px 0}.buy{width:100%}.tag{display:inline-block;background:#e6f5eb;color:var(--g);font-size:11px;padding:5px 8px;border-radius:10px;font-weight:800}
+.builder{background:var(--g);color:#fff;border-radius:24px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:30px}.builder form{background:#fff;color:var(--d);padding:22px;border-radius:18px}.builder input,.builder select,.builder textarea{width:100%;padding:12px;margin:6px 0 13px;border:1px solid #ddd;border-radius:10px;font:inherit}
+footer{background:#24170f;color:#fff;padding:40px 18px}.foot{max-width:1180px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:25px}.wa{position:fixed;right:18px;bottom:18px;background:#1aae5a;color:#fff;padding:15px 20px;border-radius:30px;text-decoration:none;font-weight:900;box-shadow:0 8px 25px #0003;z-index:30}
+.drawer{position:fixed;right:-420px;top:0;width:min(410px,100%);height:100%;background:#fff;z-index:50;box-shadow:-10px 0 35px #0002;padding:22px;transition:.25s;overflow:auto}.drawer.open{right:0}.overlay{display:none;position:fixed;inset:0;background:#0007;z-index:40}.overlay.open{display:block}.drawer h2{margin-top:5px}.item{border-bottom:1px solid var(--line);padding:14px 0}.row{display:flex;justify-content:space-between;gap:10px;align-items:center}.close{float:right;border:0;background:#eee;border-radius:50%;width:34px;height:34px;cursor:pointer}.empty{color:var(--muted);padding:30px 0;text-align:center}
+@media(max-width:850px){.nav a{display:none}.heroIn,.builder{grid-template-columns:1fr}.heroImg{min-height:240px}.grid{grid-template-columns:repeat(2,1fr)}.foot{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){h1{font-size:38px}.grid{gap:10px}.pic{height:145px;font-size:55px}.body{padding:11px}.top{font-size:11px}.nav{flex-wrap:wrap}.search{order:3;flex-basis:100%}}
+</style>
+</head>
+<body>
+<div class="top">🚚 Frete grátis acima de R$199 • 💚 Personalização • 🎁 Produção sob encomenda</div>
+<header><nav class="nav">
+<div class="logo">🎉 Festas<span>3D</span></div>
+<input class="search" id="search" placeholder="Buscar: dinossauro, safari, futebol..." oninput="filter()">
+<a href="#temas">Temas</a><a href="#kits">Kits</a><a href="#personalizar">Personalizar</a>
+<button class="cartbtn" onclick="openCart()">🛒 Carrinho <span id="badge">0</span></button>
+</nav></header>
+
+<section class="hero"><div class="heroIn">
+<div><div class="eyebrow">DECORAÇÃO INFANTIL EM IMPRESSÃO 3D</div><h1>Transforme a festa em <span>uma memória especial!</span></h1><p>Escolha um tema, personalize nome e idade e receba seu kit produzido sob encomenda.</p><a class="btn" href="#kits">Ver kits →</a></div>
+<div class="heroImg">🦖🎂✨</div>
+</div></section>
+
+<section id="temas" class="section"><h2>Escolha o tema</h2><div class="sub">Clique em um tema para filtrar os kits.</div>
+<div class="themes">
+<div class="theme" onclick="theme('dinossauro')"><b>🦖</b>Dinossauro</div><div class="theme" onclick="theme('unicórnio')"><b>🦄</b>Unicórnio</div><div class="theme" onclick="theme('safari')"><b>🦁</b>Safari</div><div class="theme" onclick="theme('espaço')"><b>🚀</b>Espaço</div><div class="theme" onclick="theme('futebol')"><b>⚽</b>Futebol</div><div class="theme" onclick="theme('sereia')"><b>🧜‍♀️</b>Sereia</div>
+</div></section>
+
+<section id="kits" class="section"><h2>Kits em destaque</h2><div class="sub">Primeira coleção para validar a loja.</div>
+<div class="grid" id="products">
+<div class="card" data-name="dinossauro"><div class="pic">🦖🎂</div><div class="body"><span class="tag">Mais pedido</span><h3>Kit Dinossauro Personalizado</h3><small>Topo + 10 toppers + tags + idade</small><div class="price">R$ 49,90</div><button class="btn buy" onclick="add('Kit Dinossauro Personalizado',49.90)">Adicionar ao carrinho</button></div></div>
+<div class="card" data-name="unicórnio"><div class="pic">🦄🎀</div><div class="body"><h3>Kit Unicórnio Personalizado</h3><small>Topo + 10 toppers + tags + idade</small><div class="price">R$ 49,90</div><button class="btn buy" onclick="add('Kit Unicórnio Personalizado',49.90)">Adicionar ao carrinho</button></div></div>
+<div class="card" data-name="safari"><div class="pic">🦁🌿</div><div class="body"><h3>Kit Safari Personalizado</h3><small>Topo + 10 toppers + tags + idade</small><div class="price">R$ 54,90</div><button class="btn buy" onclick="add('Kit Safari Personalizado',54.90)">Adicionar ao carrinho</button></div></div>
+<div class="card" data-name="futebol"><div class="pic">⚽🏆</div><div class="body"><h3>Kit Futebol Personalizado</h3><small>Topo + toppers + nome + idade</small><div class="price">R$ 54,90</div><button class="btn buy" onclick="add('Kit Futebol Personalizado',54.90)">Adicionar ao carrinho</button></div></div>
+</div></section>
+
+<section id="personalizar" class="section"><div class="builder">
+<div><div class="eyebrow" style="color:#b9f0ca">ENCOMENDA PERSONALIZADA</div><h2>Monte o kit do seu jeito 💚</h2><p>Preencha os dados e o site prepara uma mensagem para atendimento no WhatsApp.</p><p>Depois podemos substituir o WhatsApp por checkout e pagamento online.</p></div>
+<form onsubmit="sendQuote(event)"><label>Nome da criança</label><input id="nm" required placeholder="Ex.: Lucas"><label>Idade</label><input id="age" required type="number" min="1" max="99"><label>Tema</label><select id="th"><option>Dinossauro</option><option>Unicórnio</option><option>Safari</option><option>Espaço</option><option>Futebol</option><option>Sereia</option><option>Outro</option></select><label>Observações</label><textarea id="obs" rows="3" placeholder="Cores, quantidade ou detalhes..."></textarea><button class="btn" type="submit">Solicitar orçamento →</button></form>
+</div></section>
+
+<footer><div class="foot"><div><h2>🎉 Festas3D</h2><p>Imprimindo momentos especiais.</p></div><div><b>Atendimento</b><p>WhatsApp<br>Instagram<br>Segunda a sábado</p></div><div><b>Compra</b><p>Produção sob encomenda.<br>Prazo e frete confirmados no atendimento.</p></div></div></footer>
+<a class="wa" href="https://wa.me/5511999999999" target="_blank">💬 Falar no WhatsApp</a>
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div><aside class="drawer" id="drawer"><button class="close" onclick="closeCart()">×</button><h2>Seu carrinho</h2><div id="cart"></div><div class="row"><b>Total</b><b id="total">R$ 0,00</b></div><br><button class="btn buy" onclick="checkout()">Finalizar pelo WhatsApp</button><p class="small">O pagamento e o frete serão combinados no atendimento.</p></aside>
+
+<script>
+const PHONE='5511999999999'; let items=[];
+function money(v){return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}
+function add(name,price){let x=items.find(i=>i.name===name);x?x.q++:items.push({name,price,q:1});render();openCart()}
+function render(){document.getElementById('badge').textContent=items.reduce((s,i)=>s+i.q,0);let c=document.getElementById('cart');if(!items.length){c.innerHTML='<div class="empty">Seu carrinho está vazio.</div>'}else{c.innerHTML=items.map((i,n)=>`<div class="item"><div class="row"><b>${i.name}</b><button onclick="removeItem(${n})">✕</button></div><div>${i.q} × ${money(i.price)} = <b>${money(i.q*i.price)}</b></div></div>`).join('')}document.getElementById('total').textContent=money(items.reduce((s,i)=>s+i.price*i.q,0))}
+function removeItem(n){items.splice(n,1);render()}
+function openCart(){document.getElementById('drawer').classList.add('open');document.getElementById('overlay').classList.add('open')}
+function closeCart(){document.getElementById('drawer').classList.remove('open');document.getElementById('overlay').classList.remove('open')}
+function checkout(){if(!items.length)return alert('Adicione um produto ao carrinho.');let text='Olá! Quero fazer um pedido na Festas3D:%0A%0A'+items.map(i=>`• ${i.name} — ${i.q}x — ${money(i.price*i.q)}`).join('%0A')+`%0A%0ATotal: ${money(items.reduce((s,i)=>s+i.price*i.q,0))}`;window.open(`https://wa.me/${PHONE}?text=${text}`,'_blank')}
+function sendQuote(e){e.preventDefault();let n=document.getElementById('nm').value,a=document.getElementById('age').value,t=document.getElementById('th').value,o=document.getElementById('obs').value;let text=`Olá! Quero um orçamento na Festas3D.%0A%0A👧 Nome: ${n}%0A🎂 Idade: ${a}%0A🎨 Tema: ${t}%0A📝 Observações: ${o||'Nenhuma'}`;window.open(`https://wa.me/${PHONE}?text=${text}`,'_blank')}
+function filter(){let q=document.getElementById('search').value.toLowerCase();document.querySelectorAll('.card').forEach(c=>c.style.display=c.dataset.name.includes(q)||!q?'block':'none')}
+function theme(t){document.getElementById('search').value=t;filter();document.getElementById('kits').scrollIntoView()}
+render();
+</script>
+</body></html>
